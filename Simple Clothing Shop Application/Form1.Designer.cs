@@ -321,7 +321,7 @@
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.button2.Location = new System.Drawing.Point(15, 329);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(78, 23);
+            this.button2.Size = new System.Drawing.Size(96, 23);
             this.button2.TabIndex = 19;
             this.button2.Text = "Подробнее";
             this.button2.UseVisualStyleBackColor = true;
