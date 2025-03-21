@@ -111,14 +111,14 @@
             // tShirtToolStripMenuItem
             // 
             this.tShirtToolStripMenuItem.Name = "tShirtToolStripMenuItem";
-            this.tShirtToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.tShirtToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.tShirtToolStripMenuItem.Text = "Футболки";
             this.tShirtToolStripMenuItem.Click += new System.EventHandler(this.tShirtToolStripMenuItem_Click);
             // 
             // shirtToolStripMenuItem
             // 
             this.shirtToolStripMenuItem.Name = "shirtToolStripMenuItem";
-            this.shirtToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.shirtToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.shirtToolStripMenuItem.Text = "Рубашки";
             this.shirtToolStripMenuItem.Click += new System.EventHandler(this.shirtToolStripMenuItem_Click);
             // 
@@ -323,7 +323,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(78, 23);
             this.button2.TabIndex = 19;
-            this.button2.Text = "подробнее";
+            this.button2.Text = "Подробнее";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
