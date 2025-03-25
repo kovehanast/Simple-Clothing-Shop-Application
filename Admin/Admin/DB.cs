@@ -237,9 +237,9 @@ namespace Admin
         }
 
         //Insert statement
-        public void Insert()
+        public void Insert_User(string login, string pass, string full_name)
         {
-            string query = "INSERT INTO tableinfo (name, age) VALUES('John Smith', '33')";
+            string query = $"INSERT INTO `managers` (`login`, `password`, `full_name`) VALUES ('{login}', '{pass}', '{full_name}');";
 
             //open connection
             if (this.OpenConnection() == true)
@@ -350,6 +350,46 @@ namespace Admin
                 return Count;
             }
         }
+
+        public int Select_user(string login, string pass)
+        {
+            int id = 0;
+            string query = $"SELECT idmanagers FROM managers where login = '{login}' and password = '{pass}';";
+            
+            List<string> list = new List<string>();
+            list = new List<string>();
+
+            //Open connection
+            if (this.OpenConnection() == true)
+            {
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                //Create a data reader and Execute the command
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+
+                //Read the data and store them in the list
+                while (dataReader.Read())
+                {
+                    list.Add(dataReader["idmanagers"] + "");
+
+
+                }
+                try { id = Convert.ToInt32(list[0]); }
+                catch (ArgumentOutOfRangeException) { };
+                //close Data Reader
+                dataReader.Close();
+
+                //close Connection
+                this.CloseConnection();
+
+                //return list to be displayed
+                return id;
+            }
+            else
+            {
+                return id;
+            }
+        }
+
 
         //Backup
         public void Backup()
