@@ -114,7 +114,7 @@
             Controls.Add(textBox2);
             Controls.Add(textBox1);
             Name = "SignIn";
-            Text = "SignIn";
+            Text = "Вход";
             ResumeLayout(false);
             PerformLayout();
         }
