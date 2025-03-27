@@ -36,8 +36,15 @@
             button1 = new Button();
             pictureBox1 = new PictureBox();
             label1 = new Label();
+            button2 = new Button();
+            label3 = new Label();
+            dataGridView2 = new DataGridView();
+            radioButton1 = new RadioButton();
+            radioButton2 = new RadioButton();
+            label4 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             SuspendLayout();
             // 
             // textBox3
@@ -62,8 +69,10 @@
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(262, 269);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.Size = new Size(240, 118);
             dataGridView1.TabIndex = 14;
+            dataGridView1.CellClick += dataGridView1_CellClick;
             // 
             // textBox2
             // 
@@ -90,6 +99,7 @@
             button1.TabIndex = 11;
             button1.Text = "Изменить картинку";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // pictureBox1
             // 
@@ -109,11 +119,77 @@
             label1.TabIndex = 9;
             label1.Text = "Добавление товара";
             // 
+            // button2
+            // 
+            button2.Location = new Point(262, 638);
+            button2.Name = "button2";
+            button2.Size = new Size(75, 23);
+            button2.TabIndex = 17;
+            button2.Text = "Готово";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(262, 496);
+            label3.Name = "label3";
+            label3.Size = new Size(63, 15);
+            label3.TabIndex = 19;
+            label3.Text = "Категория";
+            // 
+            // dataGridView2
+            // 
+            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView2.Location = new Point(262, 514);
+            dataGridView2.Name = "dataGridView2";
+            dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView2.Size = new Size(240, 118);
+            dataGridView2.TabIndex = 18;
+            dataGridView2.CellClick += dataGridView2_CellClick;
+            // 
+            // radioButton1
+            // 
+            radioButton1.AutoSize = true;
+            radioButton1.Location = new Point(262, 456);
+            radioButton1.Name = "radioButton1";
+            radioButton1.Size = new Size(77, 19);
+            radioButton1.TabIndex = 20;
+            radioButton1.TabStop = true;
+            radioButton1.Text = "Мужской";
+            radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            radioButton2.AutoSize = true;
+            radioButton2.Location = new Point(345, 456);
+            radioButton2.Name = "radioButton2";
+            radioButton2.Size = new Size(75, 19);
+            radioButton2.TabIndex = 21;
+            radioButton2.TabStop = true;
+            radioButton2.Text = "Женский";
+            radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(262, 438);
+            label4.Name = "label4";
+            label4.Size = new Size(30, 15);
+            label4.TabIndex = 22;
+            label4.Text = "Пол";
+            // 
             // Add
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(800, 669);
+            Controls.Add(label4);
+            Controls.Add(radioButton2);
+            Controls.Add(radioButton1);
+            Controls.Add(label3);
+            Controls.Add(dataGridView2);
+            Controls.Add(button2);
             Controls.Add(textBox3);
             Controls.Add(label2);
             Controls.Add(dataGridView1);
@@ -124,8 +200,10 @@
             Controls.Add(label1);
             Name = "Add";
             Text = "Add";
+            Load += Add_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -140,5 +218,11 @@
         private Button button1;
         private PictureBox pictureBox1;
         private Label label1;
+        private Button button2;
+        private Label label3;
+        private DataGridView dataGridView2;
+        private RadioButton radioButton1;
+        private RadioButton radioButton2;
+        private Label label4;
     }
 }

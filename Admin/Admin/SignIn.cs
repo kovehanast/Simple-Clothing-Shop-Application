@@ -17,6 +17,19 @@ namespace Admin
             InitializeComponent();
         }
 
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == (Keys.Control | Keys.F))
+            {
+                this.Hide();
+                Form1 form1 = new Form1();
+                form1.Closed += (s, args) => this.Close();
+                form1.Show();
+                return true;
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             string login = textBox1.Text;
@@ -45,6 +58,11 @@ namespace Admin
             Register form1 = new Register();
             form1.Closed += (s, args) => this.Close();
             form1.Show();
+
+        }
+
+        private void SignIn_Load(object sender, EventArgs e)
+        {
 
         }
     }

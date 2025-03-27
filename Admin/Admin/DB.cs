@@ -255,6 +255,24 @@ namespace Admin
             }
         }
 
+        public void Insert_Goods(string g_name, string description, int category, int gender, string path)
+        {
+            string query = $"INSERT INTO `simplicity`.`goods` (`name`, `description`, `idcategory`, `idgender`, `path`) VALUES ('{g_name}', '{description}', '{category}', '{gender}', '{path}');";
+
+            //open connection
+            if (this.OpenConnection() == true)
+            {
+                //create command and assign the query and connection from the constructor
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+
+                //Execute command
+                cmd.ExecuteNonQuery();
+
+                //close connection
+                this.CloseConnection();
+            }
+        }
+
         //Update statement
         public void Update()
         {
@@ -325,6 +343,77 @@ namespace Admin
                 return null;
             }
         }
+
+
+        public BindingSource Select_cat()
+        {
+            string query = "SELECT idcategory as 'ID', name as 'Название' FROM category";
+
+
+
+            //Open connection
+            if (this.OpenConnection() == true)
+            {
+                //Create Command
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                //Create a data reader and Execute the command
+
+                MySqlDataAdapter dataAdapter = new MySqlDataAdapter();
+                dataAdapter.SelectCommand = cmd;
+                DataTable dt = new DataTable();
+                dataAdapter.Fill(dt);
+                BindingSource bindingSource = new BindingSource();
+                bindingSource.DataSource = dt;
+
+
+                //close Connection
+                this.CloseConnection();
+
+
+                return bindingSource;
+            }
+            else
+            {
+                // return list;
+                return null;
+            }
+        }
+
+        public BindingSource Select_size()
+        {
+            string query = "SELECT idsizes as 'ID', name as 'Название' FROM sizes";
+
+
+
+            //Open connection
+            if (this.OpenConnection() == true)
+            {
+                //Create Command
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                //Create a data reader and Execute the command
+
+                MySqlDataAdapter dataAdapter = new MySqlDataAdapter();
+                dataAdapter.SelectCommand = cmd;
+                DataTable dt = new DataTable();
+                dataAdapter.Fill(dt);
+                BindingSource bindingSource = new BindingSource();
+                bindingSource.DataSource = dt;
+
+
+                //close Connection
+                this.CloseConnection();
+
+
+                return bindingSource;
+            }
+            else
+            {
+                // return list;
+                return null;
+            }
+        }
+
+
         //Count statement
         public int Count()
         {
