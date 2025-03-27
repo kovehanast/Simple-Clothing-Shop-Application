@@ -32,12 +32,12 @@
             dataGridView1 = new DataGridView();
             button1 = new Button();
             panel1 = new Panel();
+            label2 = new Label();
             textBoxDesc = new TextBox();
             button2 = new Button();
             labelGQuantity = new Label();
             labelGName = new Label();
             pictureBox1 = new PictureBox();
-            label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -72,6 +72,7 @@
             button1.TabIndex = 2;
             button1.Text = "Добавить товар";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // panel1
             // 
@@ -85,6 +86,15 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(275, 376);
             panel1.TabIndex = 3;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(34, 318);
+            label2.Name = "label2";
+            label2.Size = new Size(75, 15);
+            label2.TabIndex = 6;
+            label2.Text = "Количество:";
             // 
             // textBoxDesc
             // 
@@ -132,15 +142,6 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(34, 318);
-            label2.Name = "label2";
-            label2.Size = new Size(75, 15);
-            label2.TabIndex = 6;
-            label2.Text = "Количество:";
             // 
             // Form1
             // 

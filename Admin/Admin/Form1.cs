@@ -52,5 +52,13 @@ namespace Admin
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Add form1 = new Add();
+            form1.Closed += (s, args) => this.Close();
+            form1.Show();
+        }
     }
 }

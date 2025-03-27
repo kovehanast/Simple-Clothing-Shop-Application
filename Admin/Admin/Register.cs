@@ -45,5 +45,23 @@ namespace Admin
             form1.Show();
 
         }
+
+        private void Register_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == (Keys.Control | Keys.F))
+            {
+                this.Hide();
+                Form1 form1 = new Form1();
+                form1.Closed += (s, args) => this.Close();
+                form1.Show();
+                return true;
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
     }
 }
