@@ -31,7 +31,7 @@ namespace Admin
             server = "127.0.0.1";
             database = "simplicity";
             uid = "root";
-            password = "106106";
+            password = "pass";
             string connectionString;
             connectionString = "SERVER=" + server + ";" + "DATABASE=" +
             database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
